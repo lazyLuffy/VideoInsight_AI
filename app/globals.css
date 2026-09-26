@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9f9f9;
+  --foreground: #0f0f0f;
+  --card-bg: #ffffff;
+  --card-border: #e5e5e5;
+  --yt-red: #ff0000;
+  --yt-red-hover: #cc0000;
+}
+
+.dark {
+  --background: #0f0f0f;
+  --foreground: #f1f1f1;
+  --card-bg: #181818;
+  --card-border: #272727;
+  --yt-red: #ff0000;
+  --yt-red-hover: #e50914;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-display);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(circle at top, rgba(220, 38, 38, 0.07), transparent 36%),
+    linear-gradient(180deg, var(--background) 0%, rgba(220, 38, 38, 0.02) 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jakarta), Arial, Helvetica, sans-serif;
+  letter-spacing: -0.02em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dark body {
+  background-color: #0f0f0f;
+  background-image:
+    radial-gradient(circle at top, rgba(239, 68, 68, 0.12), transparent 40%),
+    linear-gradient(180deg, #0f0f0f 0%, #090909 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: -0.04em;
+}
+
+::selection {
+  background: rgba(239, 68, 68, 0.25);
+  color: #991b1b;
+}
+
+.dark ::selection {
+  background: rgba(220, 38, 38, 0.4);
+  color: #fee2e2;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.22);
+  border-radius: 9999px;
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.45);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(239, 68, 68, 0.3);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(239, 68, 68, 0.55);
+}
+
+/* Print / PDF Export Styles */
+@media print {
+  body {
+    background: white !important;
+    color: #111827 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-area {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+
+  .print-area h1,
+  .print-area h2,
+  .print-area h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+    color: #000 !important;
+  }
+
+  .print-area p,
+  .print-area li,
+  .print-area blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Hide timestamp seek buttons during print, render plain text */
+  .print-area button {
+    background: transparent !important;
+    color: #4b5563 !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 }

@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "eyebrow": "AI-powered content to docs",
+    "headline": "Turn videos and files into clean notes in seconds.",
+    "description": "Upload a file or paste a YouTube link, and our AI turns the content into summaries, structured notes, and downloadable documentation."
+  },
+  "quickBadges": [
+    { "label": "Video to notes", "icon": "file-video" },
+    { "label": "PDF export", "icon": "download" }
+  ],
+  "stats": [
+    { "value": "10x", "label": "faster study flow" },
+    { "value": "AI", "label": "summary engine" },
+    { "value": "PDF", "label": "export support" }
+  ],
+  "featureSection": {
+    "eyebrow": "Features",
+    "title": "Built for smarter learning and faster documentation."
+  },
+  "features": [
+    {
+      "icon": "play-circle",
+      "title": "YouTube + file inputs",
+      "description": "Paste a YouTube link or upload a video, PDF, or other source file."
+    },
+    {
+      "icon": "brain-circuit",
+      "title": "AI-generated notes",
+      "description": "Transform raw content into clean summaries, bullet points, and key takeaways."
+    },
+    {
+      "icon": "file-text",
+      "title": "Export-ready docs",
+      "description": "Turn research into professional notes and export them as PDF or Markdown."
+    },
+    {
+      "icon": "upload-cloud",
+      "title": "Project history",
+      "description": "Keep every summary, document, and note organized in a single workspace."
+    }
+  ]
+}
