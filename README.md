@@ -113,8 +113,8 @@ flowchart TD
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/lazyLuffy/VideoInsight-AI.git
-cd VideoInsight-AI
+git clone https://github.com/lazyLuffy/VideoInsight_AI.git
+cd VideoInsight_AI
 ```
 
 ### 2. Install Dependencies
