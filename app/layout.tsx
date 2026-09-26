@@ -21,6 +21,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "VideoInsight AI",
   description: "AI-powered platform that turns videos and uploaded files into summaries, notes, and export-ready documentation.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icon.svg",
+  },
 };
 
 import { ThemeProvider } from "./components/ThemeProvider";

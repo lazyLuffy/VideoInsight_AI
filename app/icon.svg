@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="ytRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1E1E" />
+      <stop offset="100%" stop-color="#C40000" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- YouTube Red Squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#ytRed)" />
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5" />
+
+  <!-- Center White Play Triangle -->
+  <path d="M23 20.5 L43 32 L23 43.5 Z" fill="#FFFFFF" />
+
+  <!-- AI Sparkle / Star (Top Right) -->
+  <path d="M44 13 C44 17 41 20 37 20 C41 20 44 23 44 27 C44 23 47 20 51 20 C47 20 44 17 44 13 Z" fill="#FFEA79" filter="url(#glow)" />
+  <circle cx="44" cy="20" r="1.5" fill="#FFFFFF" />
+</svg>

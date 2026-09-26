@@ -24,6 +24,7 @@ import VideoPlayer, { extractYouTubeId } from "./components/VideoPlayer";
 import ChatAssistant from "./components/ChatAssistant";
 import ProjectHistory, { saveProjectToHistory, type SavedProject } from "./components/ProjectHistory";
 import ThemeToggle from "./components/ThemeToggle";
+import LoadingCharacter from "./components/LoadingCharacter";
 
 const iconMap: Record<string, LucideIcon> = {
   "play-circle": PlayCircle,
@@ -353,6 +354,11 @@ export default function Home() {
                   onSeekTimestamp={(sec) => setSeekTime(sec)}
                 />
               </div>
+            </div>
+          ) : isGenerating ? (
+            /* Animated AI Mascot & Realtime Pipeline while Gemini processes */
+            <div className="no-print">
+              <LoadingCharacter preset={preset} />
             </div>
           ) : (
             /* Empty State / Feature Teaser */
